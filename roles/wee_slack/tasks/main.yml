@@ -1,0 +1,17 @@
+# Install weechat with wee_slack
+- apt:
+    name: "{{ packages }}"
+    update_cache: yes
+    state: latest
+  vars:
+    packages:
+    - weechat
+    - python-websocket
+  tags: wee_slack
+
+- name: Download wee_slack
+  get_url:
+    url: https://raw.githubusercontent.com/wee-slack/wee-slack/master/wee_slack.py
+    dest: ~/.weechat/python/autoload
+  become: no
+  tags: wee_slack

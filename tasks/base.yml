@@ -14,7 +14,6 @@
     - git
     - silversearcher-ag
     - lnav
-    - weechat
     - ecryptfs-utils
     - sshfs
     - encfs
