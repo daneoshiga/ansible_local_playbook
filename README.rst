@@ -24,6 +24,11 @@ Pipsi returns an error when something is already installed
 
 I mostly got idempotency wrong, so tags are useful to filter which tasks to run
 
+Upsides
+-------
+
+Now I know.
+
 
 *disclaimer*:
 
