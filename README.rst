@@ -9,6 +9,8 @@ Mostly things that needed more then one entry, got itself a role.
 
 somewhat based on https://github.com/magnunleno/ansible-vostro-setup
 
+vars directory is kept out ot repo for having sensitive data, will think in a better way to do it someday
+
 
 Downsides
 ---------
