@@ -1,0 +1,18 @@
+---
+- name: install zsh packages
+  apt: pkg={{ item }} state=present
+  tags: [packages]
+  with_items:
+    - zsh
+
+- name: Set zsh as default shell
+  user: name=dshiga shell=/usr/bin/zsh
+  become: yes
+  tags: zsh
+
+- name: Clone oh-my-zsh.
+  become: no
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: "~/.oh-my-zsh"
+  tags: zsh

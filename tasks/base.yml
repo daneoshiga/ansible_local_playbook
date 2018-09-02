@@ -1,0 +1,55 @@
+- name: Sets hostname
+  hostname:
+    name: "{{ hostname }}"
+  tags: hostname
+
+- name: install basic packages
+  action: >
+    apt name={{ item }} state=present update_cache=yes
+  with_items:
+    - vim
+    - tmux
+    - mosh
+    - zsh
+    - git
+    - silversearcher-ag
+    - lnav
+    - weechat
+    - ecryptfs-utils
+    - sshfs
+    - encfs
+    - tree
+  become: yes
+  tags: packages
+
+- name: install with pipsi
+  command: pipsi install {{ item }}
+  with_items:
+    - pipenv
+    - youtube-dl
+    - subliminal
+    - neovim
+  become: no
+  tags: pipsi
+
+- name: Install telegram
+  shell: |
+    wget -O- https://telegram.org/dl/desktop/linux | sudo tar xJ -C /opt/
+    sudo ln -s /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
+  tags: telegram
+
+- name: fzy
+  apt:
+    deb: https://github.com/jhawthorn/fzy/releases/download/0.9/fzy_0.9-1_amd64.deb
+  tags: fzy
+
+- name: fzf
+  become: no
+  shell: |
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+  tags: fzf
+
+- name: heroku-cli
+  shell: curl https://cli-assets.heroku.com/install.sh | sh
+  tags: heroku

@@ -1,0 +1,10 @@
+- apt_repository:
+    repo: ppa:mumble/release
+  tags: mumble, once
+
+# Install neovim
+- apt:
+    name: mumble
+    update_cache: yes
+    state: latest
+  tags: mumble

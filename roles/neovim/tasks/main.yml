@@ -1,0 +1,15 @@
+- apt_repository:
+    repo: ppa:neovim-ppa/stable
+  tags: neovim, once
+
+# Install neovim
+- apt:
+    name: "{{ packages }}"
+    update_cache: yes
+    state: latest
+  vars:
+    packages:
+    - neovim
+    - python-neovim
+    - python3-neovim
+  tags: soundswitcher, once

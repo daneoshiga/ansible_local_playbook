@@ -1,0 +1,25 @@
+---
+- name: Provision dev Machine
+  hosts: localhost
+  connection: local
+
+  vars:
+    hostname: melchior
+    username: dshiga
+
+  vars_files:
+    - ./vars/postgresql_vars.yml
+
+  roles:
+    - zsh
+    - vivaldi
+    - neovim
+    - mumble
+    - indicator-sound-switcher
+    - ANXS.postgresql
+  become: yes
+
+  tasks:
+    # Pkg installation
+    - include: tasks/base.yml
+      tags: base
