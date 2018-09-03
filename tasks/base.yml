@@ -18,6 +18,8 @@
     - sshfs
     - encfs
     - tree
+    - conky
+    - mpv
   become: yes
   tags: packages
 
