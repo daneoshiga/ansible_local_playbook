@@ -20,6 +20,9 @@
     - tree
     - conky
     - mpv
+    - iotop
+    - shutter
+    - ruby-full
   become: yes
   tags: packages
 
