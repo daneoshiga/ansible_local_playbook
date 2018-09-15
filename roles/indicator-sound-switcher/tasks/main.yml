@@ -2,7 +2,7 @@
     repo: ppa:yktooo/ppa
   tags: soundswitcher, once
 
-# Install neovim
+# Install indicator-sound-switcher
 - apt:
     name: indicator-sound-switcher
     update_cache: yes

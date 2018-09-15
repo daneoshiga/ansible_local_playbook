@@ -23,6 +23,9 @@
     - iotop
     - shutter
     - ruby-full
+    - httpie
+    - pgcli
+    - jq
   become: yes
   tags: packages
 
@@ -33,6 +36,10 @@
     - youtube-dl
     - subliminal
     - neovim
+    - termdown
+    - watson
+    - lektor
+    - stellar
   become: no
   tags: pipsi
 
@@ -62,3 +69,11 @@
 - name: heroku-cli
   shell: curl https://cli-assets.heroku.com/install.sh | sh
   tags: heroku
+
+- name: ngrok
+  unarchive:
+    src: https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+    dest: /home/dshiga/.local/bin/
+    remote_src: yes
+  become: no
+  tags: ngrok
