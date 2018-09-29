@@ -7,40 +7,41 @@
   action: >
     apt name={{ item }} state=present update_cache=yes
   with_items:
-    - vim
-    - tmux
-    - mosh
-    - zsh
-    - git
-    - silversearcher-ag
-    - lnav
-    - ecryptfs-utils
-    - sshfs
-    - encfs
-    - tree
+    - apache2-utils
     - conky
-    - mpv
-    - iotop
-    - shutter
-    - ruby-full
-    - httpie
-    - pgcli
-    - jq
+    - ecryptfs-utils
+    - encfs
     - gimp
+    - git
+    - httpie
+    - iotop
+    - jq
+    - lnav
+    - mosh
+    - mpv
+    - pgcli
+    - ruby-full
+    - shutter
+    - silversearcher-ag
+    - sshfs
+    - tmux
+    - tree
+    - vim
+    - zsh
   become: yes
   tags: packages
 
 - name: install with pipsi
   command: pipsi install {{ item }}
   with_items:
-    - pipenv
-    - youtube-dl
-    - subliminal
+    - lektor
     - neovim
+    - pipenv
+    - stellar
+    - subliminal
     - termdown
     - watson
-    - lektor
-    - stellar
+    - youtube-dl
   become: no
   tags: pipsi
 
