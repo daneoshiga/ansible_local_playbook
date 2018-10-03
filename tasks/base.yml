@@ -8,6 +8,7 @@
     apt name={{ item }} state=present update_cache=yes
   with_items:
     - apache2-utils
+    - calibre
     - conky
     - ecryptfs-utils
     - encfs
@@ -42,6 +43,7 @@
     - termdown
     - watson
     - youtube-dl
+    - flake8
   become: no
   tags: pipsi
 
