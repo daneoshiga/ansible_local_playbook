@@ -4,31 +4,37 @@
   tags: hostname
 
 - name: install basic packages
-  action: >
-    apt name={{ item }} state=present update_cache=yes
-  with_items:
-    - apache2-utils
-    - calibre
-    - conky
-    - ecryptfs-utils
-    - encfs
-    - gimp
-    - git
-    - httpie
-    - iotop
-    - jq
-    - lnav
-    - mosh
-    - mpv
-    - pgcli
-    - ruby-full
-    - shutter
-    - silversearcher-ag
-    - sshfs
-    - tmux
-    - tree
-    - vim
-    - zsh
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - apache2-utils
+      - calibre
+      - conky
+      - ecryptfs-utils
+      - encfs
+      - flashplugin-installer
+      - gimp
+      - git
+      - graphviz
+      - httpie
+      - iotop
+      - jq
+      - lnav
+      - mosh
+      - mpv
+      - pgcli
+      - redshift-gtk
+      - ruby-full
+      - shutter
+      - silversearcher-ag
+      - sshfs
+      - tmux
+      - tree
+      - vim
+      - zsh
   become: yes
   tags: packages
 
