@@ -1,8 +1,7 @@
 - apt_repository:
-    repo: ppa:mumble/release
+    repo: ppa:mumble/snapshot
   tags: mumble, once
 
-# Install neovim
 - apt:
     name: mumble
     update_cache: yes
